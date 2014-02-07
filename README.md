@@ -1,0 +1,1 @@
+ScavengeCraft by Morkion is released under the terms of Mozilla Public License V2.0
