@@ -22,8 +22,8 @@ public class ScavengeCraft extends JavaPlugin implements Listener {
 	public void onBlockBreak(BlockBreakEvent event){
 		Block b = event.getBlock();
 		Material bm = b.getType();
-		if(new Random().nextInt(5)==0){
-			if(bm == Material.DEAD_BUSH || bm == Material.CROPS || bm == Material.SUGAR_CANE_BLOCK || bm == Material.YELLOW_FLOWER || bm == Material.LONG_GRASS || bm == Material.RED_ROSE){
+		if(bm == Material.DEAD_BUSH || bm == Material.CROPS || bm == Material.SUGAR_CANE_BLOCK || bm == Material.YELLOW_FLOWER || bm == Material.LONG_GRASS || bm == Material.RED_ROSE){
+			if(new Random().nextInt(5)==0){
 				ItemStack item = new ItemStack(Material.ROTTEN_FLESH);
 				int amount = new Random().nextInt(30);
 				short dmg = (short)new Random().nextInt(200);
@@ -63,6 +63,7 @@ public class ScavengeCraft extends JavaPlugin implements Listener {
 					item = new ItemStack(Material.WOOD_SWORD,1,dmg);
 					break;
 				case 11:
+					if(amount>10) amount-=10;
 					item = new ItemStack(Material.GOLD_INGOT,amount);
 					break;
 				case 12:
