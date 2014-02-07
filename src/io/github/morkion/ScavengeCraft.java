@@ -22,7 +22,7 @@ public class ScavengeCraft extends JavaPlugin implements Listener {
 	public void onBlockBreak(BlockBreakEvent event){
 		Block b = event.getBlock();
 		Material bm = b.getType();
-		if(bm == Material.DEAD_BUSH||bm == Material.CROPS||bm == Material.SUGAR_CANE_BLOCK||bm == Material.YELLOW_FLOWER||bm == Material.LONG_GRASS){
+		if(bm == Material.DEAD_BUSH || bm == Material.CROPS || bm == Material.SUGAR_CANE_BLOCK || bm == Material.YELLOW_FLOWER || bm == Material.LONG_GRASS || bm == Material.RED_ROSE){
 			ItemStack item = new ItemStack(Material.ROTTEN_FLESH);
 			int amount = new Random().nextInt(30);
 			short dmg = (short)new Random().nextInt(200);
@@ -52,7 +52,39 @@ public class ScavengeCraft extends JavaPlugin implements Listener {
 				item = new ItemStack(Material.STICK, amount);
 				break;
 			case 8:
+				if(amount>10) amount-=10;
 				item = new ItemStack(Material.IRON_INGOT, amount);
+				break;
+			case 9: 
+				item = new ItemStack(Material.COAL, amount);
+				break;
+			case 10:
+				item = new ItemStack(Material.WOOD_SWORD,1,dmg);
+				break;
+			case 11:
+				item = new ItemStack(Material.GOLD_INGOT,amount);
+				break;
+			case 12:
+				item = new ItemStack(Material.LEASH,amount);
+				break;
+			case 13:
+				item = new ItemStack(Material.LEATHER, amount);
+				break;
+			case 14:
+				if(amount>10) amount-=10;
+				item = new ItemStack(Material.NAME_TAG, amount);
+				break;
+			case 15:
+				item = new ItemStack(Material.SADDLE,1);
+				break;
+			case 16:
+				item = new ItemStack(Material.STRING,amount);
+				break;
+			case 17:
+				item = new ItemStack(Material.SULPHUR, amount);
+				break;
+			case 18:
+				item = new ItemStack(Material.TORCH, amount);
 				break;
 			}
 			b.getWorld().dropItem(b.getLocation(),item);
