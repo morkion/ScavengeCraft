@@ -94,9 +94,9 @@ public class ScavengeCraft extends JavaPlugin implements Listener {
 				}else{
 					event.getPlayer().sendMessage("You have found something while scavenging...");
 				}
+			}else{
+				event.getPlayer().sendMessage("You haven't found anything while scavenging.");
 			}
-		}else{
-			event.getPlayer().sendMessage("You haven't found anything while scavenging.");
 		}
 	}
 }
